@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Exoctic Software · Business management software for Pakistan and the UAE</title>
+  <meta name="description" content="Invoicing, accounting, payroll, HR, travel management and reporting on one platform, with FBR digital invoicing, UAE VAT, WPS payroll and PINT AE e-invoicing built in." />
+  <meta name="theme-color" content="#0A0A0B" />
+  <meta property="og:title" content="Exoctic Software · Run your whole back office from one place" />
+  <meta property="og:description" content="Connected business software for growing companies in Pakistan and the UAE." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:image" content="assets/favicon-512.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+
+  <!-- Tailwind v4 browser build. Compile with the Tailwind CLI for production. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-sun: #F8D447;
+      --color-sun-deep: #E2B80F;
+      --color-sun-soft: #FFF6D1;
+      --color-ink: #000000;
+      --color-ink-900: #111111;
+      --color-ink-700: #3A3A3A;
+      --color-ink-500: #6B6B6B;
+      --color-line: #E7E4DC;
+      --color-mist: #F3F1EA;
+      --color-cream: #FAF8F2;
+      --color-paper: #FFFFFF;
+      --color-night: #0A0A0B;
+      --color-night-800: #121214;
+      --color-night-700: #1A1A1D;
+      --color-night-600: #26262A;
+      --color-fog: #A1A1A8;
+      --font-display: "Rubik", ui-sans-serif, system-ui, sans-serif;
+      --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-io: cubic-bezier(0.77, 0, 0.18, 1);
+      --shadow-soft: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px -12px rgba(0,0,0,.12);
+      --shadow-lift: 0 2px 4px rgba(0,0,0,.05), 0 24px 48px -16px rgba(0,0,0,.18);
+    }
+
+    @layer base {
+      html { scrollbar-width: none; -ms-overflow-style: none; overflow-x: clip; }
+      html::-webkit-scrollbar { display: none; }
+      body { @apply font-body bg-cream text-ink-900 antialiased; overflow-x: clip; }
+      ::selection { background: var(--color-sun); color: var(--color-ink); }
+      :focus-visible { outline: 2px solid var(--color-sun); outline-offset: 3px; border-radius: 4px; }
+    }
+
+    @layer components {
+      /* Type scale */
+      .t-hero { text-wrap: balance; font-family: var(--font-display); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; font-size: clamp(2.5rem, 5.2vw, 4.5rem); }
+      .t-h2   { text-wrap: balance; font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; font-size: clamp(1.875rem, 3.4vw, 2.875rem); }
+      .t-h3   { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+      .t-lead { font-size: clamp(1.0625rem, 1.25vw, 1.1875rem); line-height: 1.6; color: var(--color-ink-500); }
+      .t-body { font-size: 1rem; line-height: 1.65; color: var(--color-ink-500); }
+      .dark .t-lead, .dark .t-body { color: var(--color-fog); }
+      .eyebrow { @apply inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.14em] text-ink-500; }
+      .eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--color-sun-deep); border-radius: 2px; }
+      .dark .eyebrow { color: var(--color-sun); }
+      .dark .eyebrow::before { background: var(--color-sun); }
+
+      .wrap { @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8; }
+      .sec { @apply py-20 sm:py-28; }
+      .dark { @apply bg-night text-paper; }
+
+      /* Dark section textures */
+      .grid-bg { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 56px 56px; }
+      .grid-fade { mask-image: radial-gradient(80% 70% at 50% 30%, #000 30%, transparent 80%); -webkit-mask-image: radial-gradient(80% 70% at 50% 30%, #000 30%, transparent 80%); }
+
+      .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-display text-[0.9375rem] font-medium whitespace-nowrap transition-all duration-300 active:scale-[0.98]; transition-timing-function: var(--ease-out); }
+      .btn-primary { @apply bg-sun text-ink; box-shadow: 0 1px 0 rgba(0,0,0,.06), inset 0 -1px 0 rgba(0,0,0,.06); }
+      .btn-primary:hover { background: #FFE066; transform: translateY(-1px); box-shadow: 0 10px 28px -8px rgba(248,212,71,.6); }
+      .btn-dark { @apply bg-ink text-paper; }
+      .btn-dark:hover { background: #1F1F1F; transform: translateY(-1px); }
+      .btn-ghost { @apply border border-line bg-paper text-ink-900; }
+      .btn-ghost:hover { @apply border-ink-900; }
+      .btn-ghost-dark { @apply border border-white/15 bg-white/5 text-paper; }
+      .btn-ghost-dark:hover { @apply border-white/40 bg-white/10; }
+
+      .card { @apply rounded-2xl border border-line bg-paper; box-shadow: var(--shadow-soft); transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .3s; }
+      .card-hover:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: #D6D2C6; }
+      .card-dark { @apply rounded-2xl border border-white/10 bg-night-800; transition: transform .5s var(--ease-out), border-color .3s, background-color .3s; }
+      .card-dark:hover { transform: translateY(-4px); border-color: rgba(248,212,71,.45); background: var(--color-night-700); }
+
+      .pill { @apply inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1.5 text-xs font-semibold text-ink-700; }
+      .pill-dark { @apply inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80; }
+      .hl { background: linear-gradient(transparent 66%, var(--color-sun) 66%, var(--color-sun) 90%, transparent 90%); padding: 0 .06em; }
+      .hl-text { background: linear-gradient(90deg, #F8D447, #FFE98A 45%, #F8D447); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+      .nav-link { @apply rounded-md px-3 py-2 text-[0.9375rem] font-medium text-white/75 transition-colors hover:text-white; }
+
+      /* Reveal system */
+      [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease-out), transform .9s var(--ease-out); transition-delay: var(--d, 0ms); will-change: opacity, transform; }
+      [data-reveal="left"]  { transform: translateX(-28px); }
+      [data-reveal="right"] { transform: translateX(28px); }
+      [data-reveal="scale"] { transform: scale(.96); }
+      [data-reveal="fade"]  { transform: none; }
+      .is-in[data-reveal] { opacity: 1; transform: none; }
+      .stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease-out), transform .8s var(--ease-out); }
+      .stagger.is-in > * { opacity: 1; transform: none; }
+
+      /* Hero line lift */
+      .lines .ln { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
+      .lines .ln > span { display: block; transform: translateY(105%); transition: transform 1s var(--ease-out); transition-delay: calc(var(--i) * 110ms); }
+      .lines.is-in .ln > span { transform: none; }
+
+      /* Product preview */
+      .app { font-size: 12px; }
+      .app .row { @apply grid grid-cols-[1.6fr_1fr_.9fr_.8fr] items-center gap-3 px-4 py-2.5 border-t border-line; }
+      .status { @apply inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-semibold whitespace-nowrap; }
+      @keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+      .floaty { animation: floaty 6s ease-in-out infinite; }
+      .floaty-2 { animation: floaty 7s ease-in-out infinite; animation-delay: -3s; }
+      @keyframes bar { from { transform: scaleY(.2) } to { transform: scaleY(1) } }
+      .bar { transform-origin: bottom; animation: bar 1.2s var(--ease-out) both; animation-delay: calc(var(--i) * 80ms + 600ms); }
+      @keyframes pulse-dot { 0% { box-shadow: 0 0 0 0 rgba(248,212,71,.55) } 100% { box-shadow: 0 0 0 10px rgba(248,212,71,0) } }
+      .pulse { animation: pulse-dot 1.8s ease-out infinite; }
+
+      /* Marquee */
+      @keyframes marquee { to { transform: translateX(-50%) } }
+      .marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+      .marquee:hover .marquee-track { animation-play-state: paused; }
+
+      /* Dropdown */
+      .dd { opacity: 0; transform: translateY(8px) scale(.98); pointer-events: none; transition: opacity .3s var(--ease-out), transform .4s var(--ease-out); }
+      .has-dd:hover .dd, .has-dd:focus-within .dd, .dd.open { opacity: 1; transform: none; pointer-events: auto; }
+
+      /* Steps line draw */
+      .step-line { transform: scaleX(0); transform-origin: left; transition: transform 1.4s var(--ease-io) .2s; }
+      .is-in .step-line { transform: scaleX(1); }
+
+      /* Accordion */
+      .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease-out); }
+      .acc-body > div { overflow: hidden; }
+      .acc.open .acc-body { grid-template-rows: 1fr; }
+      .acc-icon { transition: transform .4s var(--ease-out); }
+      .acc.open .acc-icon { transform: rotate(45deg); }
+
+      /* Product tour tabs */
+      .tab { @apply flex w-full items-start gap-4 rounded-xl border border-transparent p-4 text-left transition-colors duration-300; }
+      .tab:hover { background: rgba(255,255,255,.04); }
+      .tab[aria-selected="true"] { @apply border-white/10 bg-night-700; }
+      .tab .tab-ico { @apply grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5 text-white/70 transition-colors; }
+      .tab[aria-selected="true"] .tab-ico { @apply bg-sun text-ink; }
+      .tab .tab-desc { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease-out); }
+      .tab .tab-desc > span { overflow: hidden; }
+      .tab[aria-selected="true"] .tab-desc { grid-template-rows: 1fr; }
+      .panel { animation: panel-in .6s var(--ease-out) both; }
+      @keyframes panel-in { from { opacity: 0; transform: translateY(12px) scale(.985) } to { opacity: 1; transform: none } }
+
+      /* Segmented toggles */
+      .seg { @apply inline-flex rounded-full border border-line bg-paper p-1 text-sm font-medium; }
+      .seg button { @apply rounded-full px-4 py-1.5 text-ink-500 transition-colors; }
+      .seg button[aria-pressed="true"] { @apply bg-ink text-paper; }
+
+      /* Mobile menu (diagonal reveal from the top-right) */
+      #menu { clip-path: circle(0px at calc(100% - 2.25rem) 2.25rem); transition: clip-path .8s var(--ease-io); visibility: hidden; will-change: clip-path; }
+      #menu.open { clip-path: circle(170% at calc(100% - 2.25rem) 2.25rem); visibility: visible; }
+      #menu .m-item { opacity: 0; transform: translateX(28px); transition: opacity .5s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(var(--i) * 60ms + 220ms); }
+      #menu.open .m-item { opacity: 1; transform: none; }
+      #menu:not(.open) .m-item { transition-delay: 0ms; transition-duration: .15s; }
+      .burger span { transition: transform .4s var(--ease-out), opacity .25s; }
+      .burger[aria-expanded="true"] .b1 { transform: translateY(7px) rotate(45deg); }
+      .burger[aria-expanded="true"] .b2 { opacity: 0; }
+      .burger[aria-expanded="true"] .b3 { transform: translateY(-7px) rotate(-45deg); }
+
+      #nav { transition: box-shadow .4s, background-color .4s; }
+      #nav.scrolled { background-color: rgba(10,10,11,.92); box-shadow: 0 1px 0 rgba(255,255,255,.08), 0 12px 32px -16px rgba(0,0,0,.6); }
+
+      /* Forms */
+      .field { @apply w-full rounded-lg border border-line bg-paper px-4 py-3 text-[0.9375rem] text-ink-900 placeholder:text-ink-500/70 transition-[border-color,box-shadow] duration-300 outline-none; }
+      .field:focus { border-color: var(--color-ink); box-shadow: 0 0 0 4px rgba(248,212,71,.45); }
+      .field[aria-invalid="true"] { border-color: #D64545; }
+      .err { display: none; color: #B93636; }
+      .field[aria-invalid="true"] + .err { display: flex; }
+
+      .snap { scroll-snap-type: x mandatory; scrollbar-width: none; }
+      .snap::-webkit-scrollbar { display: none; }
+      .snap > * { scroll-snap-align: start; }
+
+      .check { @apply mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-sun text-ink; }
+      .check i { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal], .stagger > *, .lines .ln > span, .dd, #menu, #menu .m-item, .step-line, .card, .card-dark, .btn, .tab .tab-desc { transition: none !important; }
+      [data-reveal], .stagger > * { opacity: 1 !important; transform: none !important; }
+      .lines .ln > span { transform: none !important; }
+      .step-line { transform: none !important; }
+      .marquee-track, .floaty, .floaty-2, .bar, .pulse, .panel { animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+<header id="nav" class="fixed inset-x-0 top-0 z-40 bg-night/70 text-paper backdrop-blur-xl" style="padding-top: env(safe-area-inset-top)">
+  <!-- Announcement bar -->
+  <div id="announce" class="border-b border-white/10 bg-sun text-ink">
+    <div class="wrap flex h-9 items-center justify-center gap-2 text-[13px] font-medium">
+      <span class="hidden rounded-full bg-ink px-2 py-0.5 text-[11px] font-semibold text-sun sm:inline">New</span>
+      <span class="truncate">UAE e-invoicing (PINT AE) starts 1 Jan 2027 for AED 50M+ businesses. We're ready.</span>
+      <a href="#compliance" class="hidden shrink-0 items-center gap-1 underline underline-offset-2 sm:inline-flex">See how <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+  <div class="wrap flex h-[68px] items-center justify-between gap-6">
+    <a href="#top" class="flex shrink-0 items-center" aria-label="Exoctic Software, back to top">
+      <img src="assets/logo-light.png" alt="Exoctic Software" width="1091" height="353" class="h-8 w-auto sm:h-9" fetchpriority="high" />
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+      <div class="has-dd relative">
+        <button class="nav-link inline-flex items-center gap-1" aria-haspopup="true" aria-expanded="false" id="dd-btn">Products <i class="ph ph-caret-down text-sm"></i></button>
+        <div class="dd absolute left-1/2 top-full w-[680px] -translate-x-1/2 pt-3" id="dd-panel">
+          <div class="grid grid-cols-[1fr_1fr_220px] gap-1 rounded-2xl border border-white/10 bg-night-800 p-2 shadow-2xl">
+            <div class="col-span-2 grid grid-cols-2 gap-1">
+              <a href="#products" class="flex gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-sun text-ink"><i class="ph ph-receipt text-xl"></i></span><span><span class="block font-display font-medium">Invoicing</span><span class="block text-sm text-fog">Quotes, e-invoices, payments</span></span></a>
+              <a href="#products" class="flex gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5"><i class="ph ph-calculator text-xl"></i></span><span><span class="block font-display font-medium">Accounting</span><span class="block text-sm text-fog">Ledger, tax, month-end close</span></span></a>
+              <a href="#products" class="flex gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5"><i class="ph ph-users-three text-xl"></i></span><span><span class="block font-display font-medium">Payroll &amp; HR</span><span class="block text-sm text-fog">Attendance, WPS, payslips</span></span></a>
+              <a href="#products" class="flex gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5"><i class="ph ph-airplane-tilt text-xl"></i></span><span><span class="block font-display font-medium">Travel management</span><span class="block text-sm text-fog">Requests, bookings, expenses</span></span></a>
+              <a href="#products" class="flex gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5"><i class="ph ph-chart-line-up text-xl"></i></span><span><span class="block font-display font-medium">Reporting</span><span class="block text-sm text-fog">Dashboards, scheduled reports</span></span></a>
+              <a href="#products" class="flex gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5"><i class="ph ph-code text-xl"></i></span><span><span class="block font-display font-medium">Custom systems</span><span class="block text-sm text-fog">Portals, workflows, APIs</span></span></a>
+            </div>
+            <a href="#tour" class="flex flex-col justify-between rounded-xl bg-night-700 p-4 transition-colors hover:bg-night-600">
+              <span><span class="block text-xs font-semibold uppercase tracking-wider text-sun">Product tour</span><span class="mt-2 block font-display font-medium leading-snug">See invoicing, payroll and travel working together</span></span>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm text-fog">Take the tour <i class="ph ph-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="#compliance">Compliance</a>
+      <a class="nav-link" href="#industries">Industries</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+      <a class="nav-link" href="#customers">Customers</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="#contact" class="hidden px-3 text-[0.9375rem] font-medium text-white/75 hover:text-white lg:inline-flex">Sign in</a>
+      <a href="#contact" class="btn btn-primary hidden !px-4 !py-2.5 sm:inline-flex">Get a demo</a>
+      <button id="burger" class="burger grid h-11 w-11 place-items-center rounded-lg border border-white/15 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span class="grid gap-[5px]"><span class="b1 block h-[2px] w-5 bg-paper"></span><span class="b2 block h-[2px] w-5 bg-paper"></span><span class="b3 block h-[2px] w-5 bg-paper"></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="menu" class="fixed inset-0 z-30 flex flex-col bg-night px-5 text-paper lg:hidden" role="dialog" aria-modal="true" aria-label="Menu" style="padding-top: calc(8rem + env(safe-area-inset-top)); padding-bottom: max(2rem, env(safe-area-inset-bottom))">
+  <nav class="flex flex-col divide-y divide-white/10" aria-label="Mobile">
+    <a class="m-item py-4 font-display text-2xl font-medium" style="--i:0" href="#products">Products</a>
+    <a class="m-item py-4 font-display text-2xl font-medium" style="--i:1" href="#compliance">Compliance</a>
+    <a class="m-item py-4 font-display text-2xl font-medium" style="--i:2" href="#industries">Industries</a>
+    <a class="m-item py-4 font-display text-2xl font-medium" style="--i:3" href="#pricing">Pricing</a>
+    <a class="m-item py-4 font-display text-2xl font-medium" style="--i:4" href="#customers">Customers</a>
+    <a class="m-item py-4 font-display text-2xl font-medium" style="--i:5" href="#faq">FAQ</a>
+  </nav>
+  <div class="m-item mt-auto grid gap-3" style="--i:6">
+    <a href="#contact" class="btn btn-primary w-full">Get a demo</a>
+    <div class="flex justify-between text-sm text-fog"><a href="mailto:hello@voyenza.com">hello@voyenza.com</a><a href="tel:+924235770140">+92 42 3577 0140</a></div>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ================= HERO (dark) ================= -->
+<section class="dark relative overflow-hidden pt-40 sm:pt-48" aria-labelledby="hero-title">
+  <div class="grid-bg grid-fade pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -right-40 -top-40 h-[620px] w-[620px] rounded-full bg-sun/20 blur-[140px]" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -left-40 top-[40%] h-[420px] w-[420px] rounded-full bg-sun/10 blur-[120px]" aria-hidden="true"></div>
+
+  <div class="wrap relative grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10">
+    <div class="lg:col-span-6">
+      <a href="#compliance" class="pill-dark transition hover:border-sun/50" data-reveal="fade"><span class="pulse h-1.5 w-1.5 rounded-full bg-sun"></span>FBR digital invoicing &amp; UAE VAT built in <i class="ph ph-arrow-right"></i></a>
+      <h1 id="hero-title" class="t-hero lines mt-6" data-reveal="fade">
+        <span class="ln" style="--i:0"><span>Run your whole</span></span>
+        <span class="ln" style="--i:1"><span>back office from</span></span>
+        <span class="ln" style="--i:2"><span class="hl-text">one place.</span></span>
+      </h1>
+      <p class="t-lead mt-6 max-w-[46ch]" data-reveal style="--d:380ms">Invoicing, accounting, payroll, HR, travel and reporting on one connected platform, with Pakistan and UAE tax rules already built in. Built and supported by a team in Lahore and Dubai.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal style="--d:480ms">
+        <a href="#contact" class="btn btn-primary">Get a demo <i class="ph ph-arrow-right"></i></a>
+        <a href="#tour" class="btn btn-ghost-dark"><i class="ph-fill ph-play-circle text-lg text-sun"></i>Take the product tour</a>
+      </div>
+      <!-- Sample ratings: replace with your real review-site scores -->
+      <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-fog" data-reveal style="--d:580ms">
+        <div class="flex items-center gap-3">
+          <div class="flex -space-x-2">
+            <span class="grid h-8 w-8 place-items-center rounded-full border-2 border-night bg-sun font-display text-[11px] font-semibold text-ink">HR</span>
+            <span class="grid h-8 w-8 place-items-center rounded-full border-2 border-night bg-paper font-display text-[11px] font-semibold text-ink">OA</span>
+            <span class="grid h-8 w-8 place-items-center rounded-full border-2 border-night bg-night-600 font-display text-[11px] font-semibold">NB</span>
+          </div>
+          <span><span class="font-semibold text-paper">6,200+</span> people use it daily</span>
+        </div>
+        <div class="flex items-center gap-2"><span class="flex text-sun"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i></span><span><span class="font-semibold text-paper">4.8</span> average client rating</span></div>
+      </div>
+    </div>
+
+    <!-- Product preview (live HTML, not an image) -->
+    <div class="relative lg:col-span-6" data-reveal="scale" style="--d:250ms">
+      <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-sun/30 via-transparent to-transparent blur-2xl" aria-hidden="true"></div>
+      <div class="app card relative overflow-hidden !rounded-xl !border-white/10 text-ink-900" style="box-shadow: 0 40px 80px -24px rgba(0,0,0,.7)" aria-hidden="true">
+        <div class="flex items-center gap-2 border-b border-line bg-mist px-4 py-2.5">
+          <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span><span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span>
+          <span class="ml-3 flex items-center gap-1.5 rounded-md bg-paper px-3 py-1 text-[11px] text-ink-500"><i class="ph ph-lock-simple"></i>app.exoctic.com/finance</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[150px_1fr]">
+          <aside class="hidden border-r border-line bg-night p-3 text-paper sm:block">
+            <div class="mb-3 rounded-md bg-sun px-2.5 py-1.5 text-[11px] font-semibold text-ink"><i class="ph ph-receipt mr-1.5"></i>Invoices</div>
+            <div class="space-y-1 text-[11px] text-white/60">
+              <div class="px-2.5 py-1.5"><i class="ph ph-calculator mr-1.5"></i>Accounting</div>
+              <div class="px-2.5 py-1.5"><i class="ph ph-users-three mr-1.5"></i>Payroll</div>
+              <div class="px-2.5 py-1.5"><i class="ph ph-airplane-tilt mr-1.5"></i>Travel</div>
+              <div class="px-2.5 py-1.5"><i class="ph ph-chart-line-up mr-1.5"></i>Reports</div>
+            </div>
+          </aside>
+          <div class="min-w-0 bg-paper">
+            <div class="grid grid-cols-3 gap-3 p-4">
+              <div class="rounded-lg border border-line p-3"><div class="text-[10px] text-ink-500">Outstanding</div><div class="mt-1 font-display text-base font-semibold">PKR 4.82M</div></div>
+              <div class="rounded-lg border border-line p-3"><div class="text-[10px] text-ink-500">Paid this month</div><div class="mt-1 font-display text-base font-semibold">PKR 11.3M</div></div>
+              <div class="rounded-lg border border-line p-3">
+                <div class="text-[10px] text-ink-500">Collections, 8 weeks</div>
+                <div class="mt-2 flex h-7 items-end gap-1">
+                  <span class="bar w-full rounded-sm bg-line" style="--i:0;height:40%"></span><span class="bar w-full rounded-sm bg-line" style="--i:1;height:55%"></span><span class="bar w-full rounded-sm bg-line" style="--i:2;height:45%"></span><span class="bar w-full rounded-sm bg-line" style="--i:3;height:70%"></span><span class="bar w-full rounded-sm bg-line" style="--i:4;height:62%"></span><span class="bar w-full rounded-sm bg-line" style="--i:5;height:80%"></span><span class="bar w-full rounded-sm bg-line" style="--i:6;height:74%"></span><span class="bar w-full rounded-sm bg-sun" style="--i:7;height:100%"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row !border-t-0 bg-mist/60 text-[10px] font-semibold uppercase tracking-wide text-ink-500"><span>Customer</span><span>Invoice</span><span>Amount</span><span>Status</span></div>
+            <div class="row"><span class="truncate font-medium">Karwan Tours</span><span class="whitespace-nowrap text-ink-500">INV-2041</span><span class="whitespace-nowrap">PKR 640,000</span><span class="status bg-sun-soft"><i class="ph-fill ph-circle text-[7px] text-sun-deep"></i>Due 12 Oct</span></div>
+            <div class="row"><span class="truncate font-medium">Meridian Logistics</span><span class="whitespace-nowrap text-ink-500">INV-2040</span><span class="whitespace-nowrap">PKR 1,120,500</span><span class="status bg-[#E7F6EC] text-[#1C7A3E]"><i class="ph-fill ph-check-circle"></i>Paid</span></div>
+            <div class="row"><span class="truncate font-medium">Al Noor Trading</span><span class="whitespace-nowrap text-ink-500">INV-2039</span><span class="whitespace-nowrap">AED 38,400</span><span class="status bg-[#E7F6EC] text-[#1C7A3E]"><i class="ph-fill ph-check-circle"></i>Paid</span></div>
+            <div class="row"><span class="truncate font-medium">Sable Studio</span><span class="whitespace-nowrap text-ink-500">INV-2038</span><span class="whitespace-nowrap">PKR 215,000</span><span class="status bg-sun-soft"><i class="ph-fill ph-circle text-[7px] text-sun-deep"></i>Reminder</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floaty card absolute -bottom-8 -left-3 hidden items-center gap-3 !rounded-xl px-4 py-3 text-ink-900 sm:flex lg:-left-10" aria-hidden="true">
+        <span class="grid h-9 w-9 place-items-center rounded-full bg-sun"><i class="ph ph-seal-check text-lg"></i></span>
+        <span class="text-sm"><span class="block font-medium">Invoice validated by FBR</span><span class="block text-xs text-ink-500">INV-2041 · IRN issued in 1.2s</span></span>
+      </div>
+      <div class="floaty-2 card absolute -top-6 right-2 hidden items-center gap-3 !rounded-xl px-4 py-3 text-ink-900 sm:flex lg:-right-6" aria-hidden="true">
+        <span class="grid h-9 w-9 place-items-center rounded-full bg-ink text-sun"><i class="ph ph-users-three text-lg"></i></span>
+        <span class="text-sm"><span class="block font-medium">Payroll approved</span><span class="block text-xs text-ink-500">142 employees · WPS file ready</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo strip -->
+  <div class="wrap relative mt-24 pb-16 lg:mt-28" data-reveal="fade">
+    <p class="text-center text-sm text-fog">Trusted by operations and finance teams across Pakistan and the Gulf</p>
+    <div class="marquee mt-6 overflow-hidden" style="mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" aria-hidden="true">
+      <div class="marquee-track items-center gap-14 text-white/45">
+        <!-- Sample client marks: replace with real logos -->
+        <span class="flex shrink-0 items-center gap-14">
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><circle cx="13" cy="13" r="13"/></svg>Karwan</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><rect width="26" height="26" rx="6"/></svg>Meridian</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><path d="M13 0l13 13-13 13L0 13z"/></svg>Al Noor</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><path d="M0 26L13 0l13 26z"/></svg>Sable</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><rect width="11" height="26" rx="3"/><rect x="15" width="11" height="26" rx="3"/></svg>Northline</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><circle cx="8" cy="13" r="8"/><circle cx="18" cy="13" r="8"/></svg>Orbit Retail</span>
+        </span>
+        <span class="flex shrink-0 items-center gap-14">
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><circle cx="13" cy="13" r="13"/></svg>Karwan</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><rect width="26" height="26" rx="6"/></svg>Meridian</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><path d="M13 0l13 13-13 13L0 13z"/></svg>Al Noor</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><path d="M0 26L13 0l13 26z"/></svg>Sable</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><rect width="11" height="26" rx="3"/><rect x="15" width="11" height="26" rx="3"/></svg>Northline</span>
+          <span class="flex items-center gap-2 font-display text-lg font-semibold"><svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor"><circle cx="8" cy="13" r="8"/><circle cx="18" cy="13" r="8"/></svg>Orbit Retail</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats band -->
+  <div class="relative border-t border-white/10 bg-night-800/80">
+    <!-- Sample figures: replace with your real numbers -->
+    <dl class="wrap stagger grid grid-cols-2 gap-y-10 py-12 lg:grid-cols-4" data-reveal="fade">
+      <div class="px-2 lg:border-r lg:border-white/10"><dt class="text-sm text-fog">Founded</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl">2017</dd></div>
+      <div class="px-2 lg:border-r lg:border-white/10 lg:pl-8"><dt class="text-sm text-fog">Systems delivered</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl"><span data-count="140">0</span><span class="text-sun">+</span></dd></div>
+      <div class="px-2 lg:border-r lg:border-white/10 lg:pl-8"><dt class="text-sm text-fog">Invoices issued last year</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl"><span data-count="1300000">0</span><span class="text-sun">+</span></dd></div>
+      <div class="px-2 lg:pl-8"><dt class="text-sm text-fog">Client retention</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl"><span data-count="97">0</span><span class="text-sun">%</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section id="products" class="sec scroll-mt-28" aria-labelledby="products-title">
+  <div class="wrap">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-[60ch]">
+        <span class="eyebrow" data-reveal>Products</span>
+        <h2 id="products-title" class="t-h2 mt-4" data-reveal>Six products. <span class="hl">One data model.</span></h2>
+        <p class="t-lead mt-4" data-reveal style="--d:100ms">Every product reads and writes the same customer, employee and account records. Start with one, add the rest when you need them.</p>
+      </div>
+      <a href="#pricing" class="btn btn-ghost" data-reveal style="--d:200ms">Compare plans <i class="ph ph-arrow-right"></i></a>
+    </div>
+
+    <div class="stagger mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3" data-reveal="fade">
+      <article class="dark card-dark relative flex flex-col overflow-hidden p-7 md:col-span-2 lg:col-span-1 lg:row-span-2">
+        <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-sun/25 blur-3xl" aria-hidden="true"></div>
+        <span class="relative grid h-11 w-11 place-items-center rounded-lg bg-sun text-ink"><i class="ph ph-receipt text-2xl"></i></span>
+        <h3 class="t-h3 relative mt-6">Invoicing</h3>
+        <p class="t-body relative mt-2">Quotes become invoices, invoices send their own reminders, and payments post straight to the ledger. Every invoice is tax-compliant the moment it's issued.</p>
+        <ul class="relative mt-5 space-y-2.5 text-sm text-white/80">
+          <li class="flex gap-2.5"><span class="check"><i class="ph-bold ph-check"></i></span>FBR digital invoices with IRN and QR code</li>
+          <li class="flex gap-2.5"><span class="check"><i class="ph-bold ph-check"></i></span>UAE tax invoices, PINT AE ready</li>
+          <li class="flex gap-2.5"><span class="check"><i class="ph-bold ph-check"></i></span>Recurring, milestone and multi-currency billing</li>
+          <li class="flex gap-2.5"><span class="check"><i class="ph-bold ph-check"></i></span>Client portal with Raast and card payments</li>
+        </ul>
+        <div class="relative mt-auto pt-8">
+          <div class="rounded-xl border border-white/10 bg-night-700 p-4 text-xs" aria-hidden="true">
+            <div class="flex items-center justify-between gap-2"><span class="truncate font-medium">INV-2041 · Karwan Tours</span><span class="status whitespace-nowrap bg-sun text-ink">Due in 6 days</span></div>
+            <div class="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10"><div class="h-full w-2/3 rounded-full bg-sun"></div></div>
+            <div class="mt-2 flex justify-between text-fog"><span>Reminder 2 of 3 scheduled</span><span>PKR 640,000</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-hover p-7">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-sun-soft"><i class="ph ph-calculator text-2xl"></i></span>
+        <h3 class="t-h3 mt-6">Accounting</h3>
+        <p class="t-body mt-2">Double-entry ledger, bank reconciliation, sales tax and VAT returns that close the month in days, not weeks.</p>
+      </article>
+      <article class="card card-hover p-7">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-sun-soft"><i class="ph ph-users-three text-2xl"></i></span>
+        <h3 class="t-h3 mt-6">Payroll &amp; HR</h3>
+        <p class="t-body mt-2">Attendance, leave, loans and allowances flow into one payroll run, with WPS files, EOBI and gratuity handled for you.</p>
+      </article>
+      <article class="card card-hover p-7">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-sun-soft"><i class="ph ph-airplane-tilt text-2xl"></i></span>
+        <h3 class="t-h3 mt-6">Travel management</h3>
+        <p class="t-body mt-2">Trip requests, approvals, bookings and expenses on a single timeline, with per-trip budgets tracked live.</p>
+      </article>
+      <article class="card card-hover p-7">
+        <span class="grid h-11 w-11 place-items-center rounded-lg bg-sun-soft"><i class="ph ph-chart-line-up text-2xl"></i></span>
+        <h3 class="t-h3 mt-6">Reporting</h3>
+        <p class="t-body mt-2">Role-based dashboards and scheduled reports on live data, with drill-down to the source document.</p>
+      </article>
+      <article class="card card-hover relative overflow-hidden bg-sun p-7 md:col-span-2 lg:col-span-3 !border-sun">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-col gap-6 sm:flex-row sm:items-start">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-ink text-sun"><i class="ph ph-code text-2xl"></i></span>
+            <div>
+              <h3 class="t-h3">Custom systems</h3>
+              <p class="mt-2 max-w-[60ch] leading-relaxed text-ink-700">Customer portals, approval workflows, integrations with your bank or ERP, and anything your operation needs that a standard product doesn't cover. Built on the same platform with a documented REST API, so it never becomes an island.</p>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-dark shrink-0">Discuss a custom build <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT TOUR (dark, interactive) ================= -->
+<section id="tour" class="dark sec relative scroll-mt-28 overflow-hidden" aria-labelledby="tour-title">
+  <div class="grid-bg grid-fade pointer-events-none absolute inset-0 opacity-70" aria-hidden="true"></div>
+  <div class="wrap relative">
+    <div class="max-w-[62ch]">
+      <span class="eyebrow" data-reveal>Product tour</span>
+      <h2 id="tour-title" class="t-h2 mt-4" data-reveal>Why connected beats bundled.</h2>
+      <p class="t-lead mt-4" data-reveal style="--d:100ms">Most "all-in-one" suites are separate tools with a shared login. Ours share the data. Pick a workflow and watch it move through the platform.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12" data-reveal="fade">
+      <div class="lg:col-span-4" role="tablist" aria-label="Product tour" aria-orientation="vertical">
+        <button class="tab" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="true">
+          <span class="tab-ico"><i class="ph ph-calculator text-xl"></i></span>
+          <span class="min-w-0"><span class="block font-display font-medium">A ledger that updates itself</span><span class="tab-desc text-sm leading-relaxed text-fog"><span>Every invoice, payslip, trip and purchase posts its own journal entry. Month-end becomes a review, not a reconstruction.</span></span></span>
+        </button>
+        <button class="tab mt-2" role="tab" id="t-pay" aria-controls="p-pay" aria-selected="false" tabindex="-1">
+          <span class="tab-ico"><i class="ph ph-users-three text-xl"></i></span>
+          <span class="min-w-0"><span class="block font-display font-medium">Payroll in one afternoon</span><span class="tab-desc text-sm leading-relaxed text-fog"><span>Attendance and leave feed the run automatically. Approve once, and payslips, bank files and journal entries follow.</span></span></span>
+        </button>
+        <button class="tab mt-2" role="tab" id="t-trv" aria-controls="p-trv" aria-selected="false" tabindex="-1">
+          <span class="tab-ico"><i class="ph ph-airplane-tilt text-xl"></i></span>
+          <span class="min-w-0"><span class="block font-display font-medium">Trips that know the budget</span><span class="tab-desc text-sm leading-relaxed text-fog"><span>A request already knows the traveller's grade and cost centre. Approved expenses land in payroll or the client's invoice.</span></span></span>
+        </button>
+        <button class="tab mt-2" role="tab" id="t-rep" aria-controls="p-rep" aria-selected="false" tabindex="-1">
+          <span class="tab-ico"><i class="ph ph-chart-line-up text-xl"></i></span>
+          <span class="min-w-0"><span class="block font-display font-medium">Reports your board reads</span><span class="tab-desc text-sm leading-relaxed text-fog"><span>Live P&amp;L, cash runway and branch performance, emailed every Monday at 9. Click any figure to see the documents behind it.</span></span></span>
+        </button>
+      </div>
+
+      <div class="lg:col-span-8">
+        <div class="relative rounded-2xl border border-white/10 bg-night-800 p-3 sm:p-4" style="box-shadow: 0 40px 80px -30px rgba(0,0,0,.8)">
+          <!-- Finance -->
+          <div id="p-fin" role="tabpanel" aria-labelledby="t-fin" class="panel">
+            <div class="overflow-hidden rounded-xl bg-paper text-ink-900">
+              <div class="flex items-center justify-between border-b border-line px-5 py-3"><span class="font-display font-semibold">General ledger · October</span><span class="status bg-[#E7F6EC] text-[#1C7A3E]"><i class="ph-fill ph-check-circle"></i>Bank reconciled</span></div>
+              <div class="grid grid-cols-1 gap-4 p-5 sm:grid-cols-3">
+                <div class="rounded-lg bg-mist p-4"><div class="text-xs text-ink-500">Revenue</div><div class="mt-1 font-display text-xl font-semibold">PKR 18.4M</div><div class="mt-1 text-xs text-[#1C7A3E]">▲ 12.6% vs Sep</div></div>
+                <div class="rounded-lg bg-mist p-4"><div class="text-xs text-ink-500">Expenses</div><div class="mt-1 font-display text-xl font-semibold">PKR 11.9M</div><div class="mt-1 text-xs text-ink-500">▼ 3.1% vs Sep</div></div>
+                <div class="rounded-lg bg-sun p-4"><div class="text-xs text-ink-700">Net margin</div><div class="mt-1 font-display text-xl font-semibold">35.3%</div><div class="mt-1 text-xs text-ink-700">Closed on 2 Nov</div></div>
+              </div>
+              <div class="px-5 pb-5 text-xs">
+                <div class="grid grid-cols-[1.4fr_1fr_.8fr_.8fr] gap-3 border-b border-line py-2 font-semibold uppercase tracking-wide text-ink-500"><span>Entry</span><span>Source</span><span class="text-right">Debit</span><span class="text-right">Credit</span></div>
+                <div class="grid grid-cols-[1.4fr_1fr_.8fr_.8fr] gap-3 border-b border-line py-2.5"><span class="truncate">Receivables · Meridian</span><span class="truncate text-ink-500">INV-2040</span><span class="text-right">1,120,500</span><span class="text-right text-ink-500">—</span></div>
+                <div class="grid grid-cols-[1.4fr_1fr_.8fr_.8fr] gap-3 border-b border-line py-2.5"><span class="truncate">Salaries expense</span><span class="truncate text-ink-500">Payroll Oct</span><span class="text-right">6,842,000</span><span class="text-right text-ink-500">—</span></div>
+                <div class="grid grid-cols-[1.4fr_1fr_.8fr_.8fr] gap-3 border-b border-line py-2.5"><span class="truncate">Travel · client billable</span><span class="truncate text-ink-500">TRP-318</span><span class="text-right">184,300</span><span class="text-right text-ink-500">—</span></div>
+                <div class="grid grid-cols-[1.4fr_1fr_.8fr_.8fr] gap-3 py-2.5"><span class="truncate">Sales tax payable</span><span class="truncate text-ink-500">FBR return</span><span class="text-right text-ink-500">—</span><span class="text-right">2,316,000</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Payroll -->
+          <div id="p-pay" role="tabpanel" aria-labelledby="t-pay" class="panel" hidden>
+            <div class="overflow-hidden rounded-xl bg-paper text-ink-900">
+              <div class="flex items-center justify-between border-b border-line px-5 py-3"><span class="font-display font-semibold">Payroll run · October</span><span class="status bg-sun-soft"><i class="ph-fill ph-circle text-[7px] text-sun-deep"></i>Awaiting approval</span></div>
+              <div class="grid grid-cols-2 gap-4 p-5 sm:grid-cols-4">
+                <div><div class="text-xs text-ink-500">Employees</div><div class="mt-1 font-display text-xl font-semibold">142</div></div>
+                <div><div class="text-xs text-ink-500">Gross pay</div><div class="mt-1 font-display text-xl font-semibold">PKR 6.84M</div></div>
+                <div><div class="text-xs text-ink-500">EOBI + PESSI</div><div class="mt-1 font-display text-xl font-semibold">PKR 212K</div></div>
+                <div><div class="text-xs text-ink-500">Income tax withheld</div><div class="mt-1 font-display text-xl font-semibold">PKR 488K</div></div>
+              </div>
+              <div class="px-5 pb-5">
+                <ol class="grid gap-2 text-sm">
+                  <li class="flex items-center gap-3 rounded-lg bg-mist px-4 py-3"><span class="check"><i class="ph-bold ph-check"></i></span>Attendance imported from biometric devices<span class="ml-auto text-xs text-ink-500">3,124 punches</span></li>
+                  <li class="flex items-center gap-3 rounded-lg bg-mist px-4 py-3"><span class="check"><i class="ph-bold ph-check"></i></span>Leave, overtime and loan deductions applied<span class="ml-auto text-xs text-ink-500">38 adjustments</span></li>
+                  <li class="flex items-center gap-3 rounded-lg bg-mist px-4 py-3"><span class="check"><i class="ph-bold ph-check"></i></span>Dubai branch WPS salary file (SIF) generated<span class="ml-auto text-xs text-ink-500">21 employees</span></li>
+                  <li class="flex items-center gap-3 rounded-lg border border-dashed border-ink-500/40 px-4 py-3"><span class="grid h-5 w-5 place-items-center rounded-full border-2 border-sun-deep"></span>Approve and release payslips<span class="ml-auto rounded-md bg-ink px-2.5 py-1 text-xs font-semibold text-paper">Approve</span></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- Travel -->
+          <div id="p-trv" role="tabpanel" aria-labelledby="t-trv" class="panel" hidden>
+            <div class="grid overflow-hidden rounded-xl bg-paper text-ink-900 sm:grid-cols-[1fr_1.1fr]">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=75" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-travel/900/900'" alt="Aircraft wing above the clouds" loading="lazy" width="900" height="900" class="h-48 w-full object-cover sm:h-full" />
+              <div class="p-5">
+                <div class="flex items-center justify-between"><span class="font-display font-semibold">TRP-318 · Lahore → Dubai</span><span class="status bg-[#E7F6EC] text-[#1C7A3E]"><i class="ph-fill ph-check-circle"></i>Approved</span></div>
+                <p class="mt-1 text-xs text-ink-500">Sara Ahmed · Grade M2 · Cost centre: Sales UAE · Billable to Al Noor Trading</p>
+                <div class="mt-5 text-xs text-ink-500">Budget used</div>
+                <div class="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-mist"><div class="h-full w-[72%] rounded-full bg-sun"></div></div>
+                <div class="mt-1.5 flex justify-between text-xs"><span class="font-medium">PKR 184,300</span><span class="text-ink-500">of PKR 256,000</span></div>
+                <ul class="mt-5 space-y-2.5 text-sm">
+                  <li class="flex items-center gap-3"><i class="ph ph-airplane-takeoff text-lg"></i>Return flight, economy<span class="ml-auto font-medium">PKR 118,400</span></li>
+                  <li class="flex items-center gap-3"><i class="ph ph-bed text-lg"></i>Hotel, 3 nights, Business Bay<span class="ml-auto font-medium">PKR 52,900</span></li>
+                  <li class="flex items-center gap-3"><i class="ph ph-receipt text-lg"></i>Receipts captured on phone<span class="ml-auto font-medium">PKR 13,000</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Reports -->
+          <div id="p-rep" role="tabpanel" aria-labelledby="t-rep" class="panel" hidden>
+            <div class="overflow-hidden rounded-xl bg-paper p-5 text-ink-900">
+              <div class="flex flex-wrap items-center justify-between gap-3"><span class="font-display font-semibold">Revenue by branch · last 12 months</span><span class="flex gap-3 text-xs text-ink-500"><span class="flex items-center gap-1.5"><span class="h-2.5 w-2.5 rounded-sm bg-ink"></span>Lahore</span><span class="flex items-center gap-1.5"><span class="h-2.5 w-2.5 rounded-sm bg-sun"></span>Dubai</span></span></div>
+              <div class="mt-6 flex h-48 items-end gap-2" aria-hidden="true">
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:0;height:18%"></span><span class="bar rounded-b-sm bg-ink" style="--i:0;height:30%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:1;height:20%"></span><span class="bar rounded-b-sm bg-ink" style="--i:1;height:32%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:2;height:19%"></span><span class="bar rounded-b-sm bg-ink" style="--i:2;height:35%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:3;height:24%"></span><span class="bar rounded-b-sm bg-ink" style="--i:3;height:34%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:4;height:26%"></span><span class="bar rounded-b-sm bg-ink" style="--i:4;height:38%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:5;height:25%"></span><span class="bar rounded-b-sm bg-ink" style="--i:5;height:41%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:6;height:29%"></span><span class="bar rounded-b-sm bg-ink" style="--i:6;height:40%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:7;height:31%"></span><span class="bar rounded-b-sm bg-ink" style="--i:7;height:43%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:8;height:33%"></span><span class="bar rounded-b-sm bg-ink" style="--i:8;height:45%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:9;height:35%"></span><span class="bar rounded-b-sm bg-ink" style="--i:9;height:47%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:10;height:38%"></span><span class="bar rounded-b-sm bg-ink" style="--i:10;height:49%"></span></div>
+                <div class="flex h-full flex-1 flex-col justify-end gap-0.5"><span class="bar rounded-t-sm bg-sun" style="--i:11;height:42%"></span><span class="bar rounded-b-sm bg-ink" style="--i:11;height:53%"></span></div>
+              </div>
+              <div class="mt-2 flex justify-between text-[11px] text-ink-500"><span>Nov</span><span>Feb</span><span>May</span><span>Aug</span><span>Oct</span></div>
+              <div class="mt-5 flex items-center gap-3 rounded-lg bg-mist px-4 py-3 text-sm"><i class="ph ph-envelope-simple text-lg"></i>Scheduled: emailed to 4 directors every Monday, 09:00 PKT<span class="ml-auto hidden text-xs text-ink-500 sm:inline">PDF + Excel</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPLIANCE (yellow) ================= -->
+<section id="compliance" class="sec relative scroll-mt-28 overflow-hidden bg-sun" aria-labelledby="comp-title">
+  <div class="pointer-events-none absolute inset-0 opacity-[.07]" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 18px 18px" aria-hidden="true"></div>
+  <div class="wrap relative">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <span class="eyebrow !text-ink-700" data-reveal>Compliance built in</span>
+        <h2 id="comp-title" class="t-h2 mt-4" data-reveal>Tax rules change. <br class="hidden sm:block" />Your software keeps up.</h2>
+        <p class="mt-4 max-w-[56ch] text-[1.0625rem] leading-relaxed text-ink-700" data-reveal style="--d:100ms">Both our home markets are moving to real-time, government-connected invoicing. We track the regulations so your finance team doesn't have to rebuild processes every budget season.</p>
+      </div>
+      <!-- Countdown to UAE e-invoicing go-live for large businesses (1 Jan 2027, per UAE MoF phased rollout) -->
+      <div class="lg:col-span-5" data-reveal="right">
+        <div class="rounded-2xl bg-ink p-6 text-paper">
+          <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sun"><span class="pulse h-1.5 w-1.5 rounded-full bg-sun"></span>UAE e-invoicing go-live</div>
+          <div class="mt-3 flex items-end gap-3"><span id="countdown" class="font-display text-5xl font-semibold tabular-nums">—</span><span class="pb-1.5 text-fog">days to 1 Jan 2027</span></div>
+          <p class="mt-3 text-sm leading-relaxed text-fog">Businesses with AED 50M+ revenue must appoint an Accredited Service Provider by 30 Oct 2026. Everyone else follows on 1 Jul 2027.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stagger mt-14 grid grid-cols-1 gap-5 lg:grid-cols-2" data-reveal="fade">
+      <article class="rounded-2xl border border-ink/10 bg-paper p-7 shadow-[0_24px_48px_-24px_rgba(0,0,0,.35)]">
+        <div class="flex items-center justify-between">
+          <h3 class="t-h3 flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-lg bg-[#01411C] font-display text-sm font-bold text-paper">PK</span>Pakistan</h3>
+          <span class="pill">FBR · PRA · SRB · EOBI</span>
+        </div>
+        <ul class="mt-6 divide-y divide-line">
+          <li class="flex gap-4 py-4"><i class="ph ph-seal-check mt-0.5 text-2xl"></i><div><div class="font-display font-medium">FBR digital invoicing</div><p class="t-body mt-1 !text-[0.9375rem]">Invoices go to FBR in real time through a licensed integrator or PRAL, as required under Sales Tax Rule 150Q, and print with the IRN and QR code.</p></div></li>
+          <li class="flex gap-4 py-4"><i class="ph ph-files mt-0.5 text-2xl"></i><div><div class="font-display font-medium">Sales tax and withholding</div><p class="t-body mt-1 !text-[0.9375rem]">Annexure-ready sales tax returns, provincial sales tax on services (PRA, SRB, KPRA) and withholding tax statements, straight from your ledger.</p></div></li>
+          <li class="flex gap-4 py-4"><i class="ph ph-hand-coins mt-0.5 text-2xl"></i><div><div class="font-display font-medium">Payroll deductions</div><p class="t-body mt-1 !text-[0.9375rem]">Salary income tax slabs updated each Finance Act, plus EOBI and provincial social security (PESSI, SESSI) contributions per employee.</p></div></li>
+        </ul>
+      </article>
+      <article class="rounded-2xl border border-ink/10 bg-paper p-7 shadow-[0_24px_48px_-24px_rgba(0,0,0,.35)]">
+        <div class="flex items-center justify-between">
+          <h3 class="t-h3 flex items-center gap-3"><span class="grid h-10 w-10 place-items-center rounded-lg bg-[#00732F] font-display text-sm font-bold text-paper">AE</span>United Arab Emirates</h3>
+          <span class="pill">FTA · MoHRE · MoF</span>
+        </div>
+        <ul class="mt-6 divide-y divide-line">
+          <li class="flex gap-4 py-4"><i class="ph ph-globe-hemisphere-east mt-0.5 text-2xl"></i><div><div class="font-display font-medium">E-invoicing (PINT AE)</div><p class="t-body mt-1 !text-[0.9375rem]">Structured invoices in the Peppol PINT AE format, exchanged through your chosen Accredited Service Provider, ready for the 2027 mandate.</p></div></li>
+          <li class="flex gap-4 py-4"><i class="ph ph-percent mt-0.5 text-2xl"></i><div><div class="font-display font-medium">VAT and corporate tax</div><p class="t-body mt-1 !text-[0.9375rem]">5% VAT with reverse charge and FTA-format VAT 201 returns, plus the records and adjustments you need for 9% corporate tax filing.</p></div></li>
+          <li class="flex gap-4 py-4"><i class="ph ph-bank mt-0.5 text-2xl"></i><div><div class="font-display font-medium">WPS payroll and gratuity</div><p class="t-body mt-1 !text-[0.9375rem]">Salary Information Files (SIF) generated in the exact MoHRE and Central Bank format, with end-of-service gratuity accrued monthly.</p></div></li>
+        </ul>
+      </article>
+    </div>
+    <p class="mt-6 text-sm text-ink-700">Regulatory references current as of September 2026. We publish every rule change to clients before it takes effect.</p>
+  </div>
+</section>
+
+<!-- ================= INTEGRATIONS ================= -->
+<section id="integrations" class="sec scroll-mt-28" aria-labelledby="int-title">
+  <div class="wrap">
+    <div class="mx-auto max-w-[62ch] text-center">
+      <span class="eyebrow" data-reveal>Integrations</span>
+      <h2 id="int-title" class="t-h2 mt-4" data-reveal>Plugs into the tools you already use.</h2>
+      <p class="t-lead mt-4" data-reveal style="--d:100ms">Banks, payment rails, booking systems and office tools. If it has an API, we can connect it.</p>
+    </div>
+    <!-- Integration list: confirm each connection before publishing -->
+    <div class="stagger mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal="fade">
+      <div class="card card-hover p-6">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-sun"><i class="ph ph-wallet text-xl"></i></span>
+        <h3 class="mt-5 font-display font-semibold">Payments</h3>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="pill">Raast</span><span class="pill">1LINK</span><span class="pill">JazzCash</span><span class="pill">Easypaisa</span><span class="pill">Network Intl.</span><span class="pill">Stripe</span></div>
+      </div>
+      <div class="card card-hover p-6">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-sun"><i class="ph ph-bank text-xl"></i></span>
+        <h3 class="mt-5 font-display font-semibold">Banking &amp; tax</h3>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="pill">Bank statement feeds</span><span class="pill">FBR / PRAL</span><span class="pill">UAE ASPs</span><span class="pill">WPS agents</span></div>
+      </div>
+      <div class="card card-hover p-6">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-sun"><i class="ph ph-airplane-in-flight text-xl"></i></span>
+        <h3 class="mt-5 font-display font-semibold">Travel</h3>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="pill">Sabre</span><span class="pill">Amadeus</span><span class="pill">Travelport</span><span class="pill">IATA BSP</span><span class="pill">Hotel APIs</span></div>
+      </div>
+      <div class="card card-hover p-6">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-sun"><i class="ph ph-plugs-connected text-xl"></i></span>
+        <h3 class="mt-5 font-display font-semibold">Workplace</h3>
+        <div class="mt-4 flex flex-wrap gap-2"><span class="pill">Microsoft 365</span><span class="pill">Google Workspace</span><span class="pill">WhatsApp Business</span><span class="pill">ZKTeco</span><span class="pill">Excel</span></div>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-line bg-paper p-6 sm:flex-row" data-reveal>
+      <div class="flex items-center gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-sun-soft"><i class="ph ph-brackets-curly text-2xl"></i></span><div><div class="font-display font-medium">REST API and webhooks</div><div class="text-sm text-ink-500">Every record in the platform is available to your developers, with API keys scoped per role.</div></div></div>
+      <a href="#contact" class="btn btn-ghost shrink-0">Request API docs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES ================= -->
+<section id="industries" class="sec scroll-mt-28 border-y border-line bg-mist" aria-labelledby="ind-title">
+  <div class="wrap">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-[60ch]">
+        <span class="eyebrow" data-reveal>Industries</span>
+        <h2 id="ind-title" class="t-h2 mt-4" data-reveal>Built for operational businesses.</h2>
+        <p class="t-lead mt-4" data-reveal style="--d:100ms">Companies with staff to pay, trips to approve and invoices to chase. Usually 20 to 500 people.</p>
+      </div>
+      <div class="hidden gap-2 sm:flex" data-reveal style="--d:200ms">
+        <button class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 bg-paper transition hover:bg-ink hover:text-paper active:scale-95" data-scroll="-1" aria-label="Scroll left"><i class="ph ph-arrow-left text-lg"></i></button>
+        <button class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 bg-paper transition hover:bg-ink hover:text-paper active:scale-95" data-scroll="1" aria-label="Scroll right"><i class="ph ph-arrow-right text-lg"></i></button>
+      </div>
+    </div>
+  </div>
+  <div id="ind-track" class="snap stagger mt-12 flex gap-5 overflow-x-auto px-5 pb-6 pt-2 sm:px-8 lg:px-[max(2rem,calc((100vw-1200px)/2+2rem))]" data-reveal="fade">
+    <article class="card card-hover w-[78vw] shrink-0 overflow-hidden sm:w-[320px]">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-tour/800/500'" alt="" loading="lazy" width="800" height="500" class="aspect-[16/10] w-full object-cover" />
+      <div class="p-6"><h3 class="t-h3">Travel &amp; tour operators</h3><p class="t-body mt-2">Itineraries, supplier costs, BSP settlements and client invoices on one booking.</p></div>
+    </article>
+    <article class="card card-hover w-[78vw] shrink-0 overflow-hidden sm:w-[320px]">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-office/800/500'" alt="" loading="lazy" width="800" height="500" class="aspect-[16/10] w-full object-cover" />
+      <div class="p-6"><h3 class="t-h3">Professional services</h3><p class="t-body mt-2">Retainers, timesheets and project margin that reconcile themselves.</p></div>
+    </article>
+    <article class="card card-hover w-[78vw] shrink-0 overflow-hidden sm:w-[320px]">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-team/800/500'" alt="" loading="lazy" width="800" height="500" class="aspect-[16/10] w-full object-cover" />
+      <div class="p-6"><h3 class="t-h3">Technology companies</h3><p class="t-body mt-2">Contractors, subscriptions and multi-currency payroll without the spreadsheets.</p></div>
+    </article>
+    <article class="card card-hover w-[78vw] shrink-0 overflow-hidden sm:w-[320px]">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-warehouse/800/500'" alt="" loading="lazy" width="800" height="500" class="aspect-[16/10] w-full object-cover" />
+      <div class="p-6"><h3 class="t-h3">Retail &amp; distribution</h3><p class="t-body mt-2">Purchase orders, stock and cash flow in the same view as sales, with POS invoices reported to FBR.</p></div>
+    </article>
+    <article class="card card-hover w-[78vw] shrink-0 overflow-hidden sm:w-[320px]">
+      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-agency/800/500'" alt="" loading="lazy" width="800" height="500" class="aspect-[16/10] w-full object-cover" />
+      <div class="p-6"><h3 class="t-h3">Agencies &amp; studios</h3><p class="t-body mt-2">Client budgets, freelancer payouts and invoices per campaign.</p></div>
+    </article>
+    <article class="card card-hover w-[78vw] shrink-0 overflow-hidden sm:w-[320px]">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-mfg/800/500'" alt="" loading="lazy" width="800" height="500" class="aspect-[16/10] w-full object-cover" />
+      <div class="p-6"><h3 class="t-h3">Manufacturing &amp; export</h3><p class="t-body mt-2">Shift-based payroll, export invoices in USD and AED, and cost per production batch.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= CUSTOMERS / CASE STUDIES (dark) ================= -->
+<section id="customers" class="dark sec relative scroll-mt-28 overflow-hidden" aria-labelledby="cust-title">
+  <div class="pointer-events-none absolute -left-40 top-20 h-[480px] w-[480px] rounded-full bg-sun/10 blur-[140px]" aria-hidden="true"></div>
+  <div class="wrap relative">
+    <div class="max-w-[62ch]">
+      <span class="eyebrow" data-reveal>Customer results</span>
+      <h2 id="cust-title" class="t-h2 mt-4" data-reveal>What clients say after the first quarter.</h2>
+    </div>
+
+    <!-- Sample case studies and testimonials: replace with real client data -->
+    <div class="stagger mt-12 grid grid-cols-1 gap-5 md:grid-cols-3" data-reveal="fade">
+      <figure class="card-dark flex flex-col p-7">
+        <div class="font-display text-5xl font-semibold text-sun">7→1.5</div>
+        <div class="mt-1 text-sm text-fog">days to close the month</div>
+        <blockquote class="mt-6 border-t border-white/10 pt-6 text-[1.0625rem] leading-relaxed">"Month-end used to take a week of exports. Now the numbers are there on the first, and they match the bank."</blockquote>
+        <figcaption class="mt-auto flex items-center gap-3 pt-6"><span class="grid h-10 w-10 place-items-center rounded-full bg-sun font-display text-sm font-semibold text-ink">HR</span><span class="text-sm"><span class="block font-medium">Hira Rizvi</span><span class="block text-fog">Finance Lead, Karwan Tours</span></span></figcaption>
+      </figure>
+      <figure class="card-dark flex flex-col p-7">
+        <div class="font-display text-5xl font-semibold text-sun">3 hrs</div>
+        <div class="mt-1 text-sm text-fog">to run payroll for 140 people</div>
+        <blockquote class="mt-6 border-t border-white/10 pt-6 text-[1.0625rem] leading-relaxed">"Payroll takes one afternoon, and nobody has messaged me about a wrong payslip since we switched."</blockquote>
+        <figcaption class="mt-auto flex items-center gap-3 pt-6"><span class="grid h-10 w-10 place-items-center rounded-full bg-paper font-display text-sm font-semibold text-ink">OA</span><span class="text-sm"><span class="block font-medium">Omar Al-Rashid</span><span class="block text-fog">Operations Director, Meridian Logistics</span></span></figcaption>
+      </figure>
+      <figure class="card-dark flex flex-col p-7">
+        <div class="font-display text-5xl font-semibold text-sun">9 days</div>
+        <div class="mt-1 text-sm text-fog">to open a second entity in Dubai</div>
+        <blockquote class="mt-6 border-t border-white/10 pt-6 text-[1.0625rem] leading-relaxed">"We opened a Dubai branch and it was a settings change, not a new project. VAT and WPS just worked."</blockquote>
+        <figcaption class="mt-auto flex items-center gap-3 pt-6"><span class="grid h-10 w-10 place-items-center rounded-full bg-night-600 font-display text-sm font-semibold">NB</span><span class="text-sm"><span class="block font-medium">Nadia Baig</span><span class="block text-fog">Managing Partner, Northline</span></span></figcaption>
+      </figure>
+    </div>
+
+    <!-- Featured case study -->
+    <div class="mt-5 grid grid-cols-1 overflow-hidden rounded-2xl border border-white/10 bg-night-800 lg:grid-cols-2" data-reveal>
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=75" onerror="this.onerror=null;this.src='https://picsum.photos/seed/exoctic-finance/1200/800'" alt="Finance team reviewing figures on a laptop" loading="lazy" width="1200" height="800" class="h-64 w-full object-cover lg:h-full" />
+      <div class="p-8 sm:p-10">
+        <span class="pill-dark">Case study · Travel</span>
+        <h3 class="t-h2 mt-5 !text-[clamp(1.5rem,2.4vw,2rem)]">How Karwan Tours replaced four tools and two spreadsheets.</h3>
+        <p class="t-body mt-4">A 90-person tour operator with offices in Lahore and Islamabad moved bookings, supplier payments, payroll and FBR invoicing onto one platform in eleven weeks.</p>
+        <dl class="mt-8 grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+          <div><dt class="text-xs text-fog">Tools retired</dt><dd class="mt-1 font-display text-2xl font-semibold">4</dd></div>
+          <div><dt class="text-xs text-fog">Faster collections</dt><dd class="mt-1 font-display text-2xl font-semibold">18 days</dd></div>
+          <div><dt class="text-xs text-fog">Go-live</dt><dd class="mt-1 font-display text-2xl font-semibold">11 wks</dd></div>
+        </dl>
+        <a href="#contact" class="mt-8 inline-flex items-center gap-1.5 font-display text-sm font-medium text-sun hover:underline">Ask for the full case study <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing" class="sec scroll-mt-28" aria-labelledby="price-title">
+  <div class="wrap">
+    <div class="mx-auto max-w-[62ch] text-center">
+      <span class="eyebrow" data-reveal>Pricing</span>
+      <h2 id="price-title" class="t-h2 mt-4" data-reveal>Simple plans. No per-module surprises.</h2>
+      <p class="t-lead mt-4" data-reveal style="--d:100ms">Pay monthly or save with annual billing. Implementation is quoted once, up front, based on your scope.</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3" data-reveal style="--d:200ms">
+        <div class="seg" role="group" aria-label="Billing period">
+          <button type="button" data-billing="monthly" aria-pressed="false">Monthly</button>
+          <button type="button" data-billing="annual" aria-pressed="true">Annual <span class="ml-1 rounded-full bg-sun px-1.5 py-0.5 text-[10px] font-semibold text-ink">−15%</span></button>
+        </div>
+        <div class="seg" role="group" aria-label="Currency">
+          <button type="button" data-cur="PKR" aria-pressed="true">PKR</button>
+          <button type="button" data-cur="AED" aria-pressed="false">AED</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample pricing: replace with your real price list -->
+    <div class="stagger mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3" data-reveal="fade">
+      <article class="card flex flex-col p-8">
+        <h3 class="t-h3">Starter</h3>
+        <p class="t-body mt-1 !text-sm">For small teams getting off spreadsheets.</p>
+        <div class="mt-6 flex items-end gap-1.5"><span class="price font-display text-4xl font-semibold" data-pkr="14900" data-aed="199">—</span><span class="pb-1 text-sm text-ink-500">/ month</span></div>
+        <p class="bill-note mt-1 text-xs text-ink-500">Up to 10 users, billed annually</p>
+        <a href="#contact" class="btn btn-ghost mt-6 w-full">Start with Starter</a>
+        <ul class="mt-8 space-y-3 border-t border-line pt-6 text-sm text-ink-700">
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>Invoicing and accounting</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>FBR digital invoicing or UAE VAT</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>1 company, 1 currency</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>Email support, next working day</li>
+        </ul>
+      </article>
+      <article class="dark relative flex flex-col overflow-hidden rounded-2xl border border-sun/40 p-8 shadow-[0_40px_80px_-30px_rgba(0,0,0,.55)] lg:-my-4 lg:py-12">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-sun/25 blur-3xl" aria-hidden="true"></div>
+        <div class="relative flex items-center justify-between"><h3 class="t-h3">Growth</h3><span class="rounded-full bg-sun px-2.5 py-1 text-xs font-semibold text-ink">Most popular</span></div>
+        <p class="t-body relative mt-1 !text-sm">The full platform for growing operations.</p>
+        <div class="relative mt-6 flex items-end gap-1.5"><span class="price font-display text-4xl font-semibold" data-pkr="39900" data-aed="549">—</span><span class="pb-1 text-sm text-fog">/ month</span></div>
+        <p class="bill-note relative mt-1 text-xs text-fog">Up to 50 users, billed annually</p>
+        <a href="#contact" class="btn btn-primary relative mt-6 w-full">Get a demo</a>
+        <ul class="relative mt-8 space-y-3 border-t border-white/10 pt-6 text-sm text-white/85">
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-sun"></i>Everything in Starter</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-sun"></i>Payroll &amp; HR with WPS and EOBI</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-sun"></i>Travel management and reporting</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-sun"></i>Up to 3 companies, multi-currency</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-sun"></i>Named contact, 4-hour response</li>
+        </ul>
+      </article>
+      <article class="card flex flex-col p-8">
+        <h3 class="t-h3">Enterprise</h3>
+        <p class="t-body mt-1 !text-sm">For groups with custom workflows.</p>
+        <div class="mt-6 flex items-end gap-1.5"><span class="font-display text-4xl font-semibold">Custom</span></div>
+        <p class="mt-1 text-xs text-ink-500">Unlimited users and entities</p>
+        <a href="#contact" class="btn btn-dark mt-6 w-full">Talk to sales</a>
+        <ul class="mt-8 space-y-3 border-t border-line pt-6 text-sm text-ink-700">
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>Everything in Growth</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>Custom systems and API access</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>SSO, audit exports, data residency</li>
+          <li class="flex gap-2.5"><i class="ph ph-check mt-0.5 text-ink"></i>99.9% uptime SLA, 1-hour priority response</li>
+        </ul>
+      </article>
+    </div>
+    <p class="mt-8 text-center text-sm text-ink-500">Prices exclude applicable sales tax or VAT. Nonprofits and early-stage startups get 30% off, ask us.</p>
+  </div>
+</section>
+
+<!-- ================= SECURITY (dark) ================= -->
+<section id="security" class="dark relative scroll-mt-28 overflow-hidden py-20 sm:py-24" aria-labelledby="sec-title">
+  <div class="grid-bg grid-fade pointer-events-none absolute inset-0 opacity-60" aria-hidden="true"></div>
+  <div class="wrap relative grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+    <div class="lg:col-span-5">
+      <span class="eyebrow" data-reveal>Security &amp; reliability</span>
+      <h2 id="sec-title" class="t-h2 mt-4" data-reveal>Your payroll is the most sensitive data you own. We treat it that way.</h2>
+      <p class="t-lead mt-4" data-reveal style="--d:100ms">Every design decision starts from one rule: your data is yours, and only the right people see it.</p>
+      <a href="#contact" class="btn btn-ghost-dark mt-8" data-reveal style="--d:200ms"><i class="ph ph-shield-check text-lg text-sun"></i>Request our security overview</a>
+    </div>
+    <div class="stagger grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-7" data-reveal="fade">
+      <div class="card-dark p-6"><i class="ph ph-lock-key text-3xl text-sun"></i><h3 class="mt-4 font-display font-semibold">Encrypted everywhere</h3><p class="mt-1.5 text-sm leading-relaxed text-fog">AES-256 at rest and TLS 1.2+ in transit, including backups.</p></div>
+      <div class="card-dark p-6"><i class="ph ph-user-focus text-3xl text-sun"></i><h3 class="mt-4 font-display font-semibold">Role-based access</h3><p class="mt-1.5 text-sm leading-relaxed text-fog">Field-level permissions, two-factor sign-in and SSO on Enterprise.</p></div>
+      <div class="card-dark p-6"><i class="ph ph-clock-counter-clockwise text-3xl text-sun"></i><h3 class="mt-4 font-display font-semibold">Full audit trail</h3><p class="mt-1.5 text-sm leading-relaxed text-fog">Who changed what, when, and from where. Kept for seven years.</p></div>
+      <div class="card-dark p-6"><i class="ph ph-cloud-check text-3xl text-sun"></i><h3 class="mt-4 font-display font-semibold">Daily backups, 99.9% uptime</h3><p class="mt-1.5 text-sm leading-relaxed text-fog">Point-in-time recovery, 30-day retention, hosting in the UAE or on your own servers in Pakistan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" class="sec scroll-mt-28" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="max-w-[60ch]">
+      <span class="eyebrow" data-reveal>How we work</span>
+      <h2 id="process-title" class="t-h2 mt-4" data-reveal>From first call to go-live in weeks.</h2>
+      <p class="t-lead mt-4" data-reveal style="--d:100ms">A fixed, visible process. You see working software at every stage, on your own data.</p>
+    </div>
+
+    <div class="relative mt-14" data-reveal="fade">
+      <div class="step-line pointer-events-none absolute left-6 right-6 top-6 hidden h-0.5 bg-gradient-to-r from-ink via-ink/40 to-sun lg:block" aria-hidden="true"></div>
+      <ol class="stagger grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4" data-reveal="fade">
+        <li class="relative">
+          <span class="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-ink font-display font-semibold text-paper">1</span>
+          <div class="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">Week 1–2</div>
+          <h3 class="t-h3 mt-1">Discovery</h3>
+          <p class="t-body mt-2">We map how money, people and documents move through your business today, with the people who do the work.</p>
+        </li>
+        <li class="relative">
+          <span class="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-ink font-display font-semibold text-paper">2</span>
+          <div class="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">Week 3–5</div>
+          <h3 class="t-h3 mt-1">Configuration</h3>
+          <p class="t-body mt-2">Your chart of accounts, pay structures, tax registrations and approval chains are set up. Existing data is imported once.</p>
+        </li>
+        <li class="relative">
+          <span class="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-ink font-display font-semibold text-paper">3</span>
+          <div class="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">Week 6–9</div>
+          <h3 class="t-h3 mt-1">Pilot</h3>
+          <p class="t-body mt-2">One department runs live for a full cycle. We fix what we learn before the rest of the company joins.</p>
+        </li>
+        <li class="relative">
+          <span class="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-sun font-display font-semibold">4</span>
+          <div class="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">Week 10+</div>
+          <h3 class="t-h3 mt-1">Go-live and support</h3>
+          <p class="t-body mt-2">Training on your data, a named support contact, and a roadmap for the modules you add next.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="sec scroll-mt-28 border-t border-line bg-mist" aria-labelledby="faq-title">
+  <div class="wrap grid grid-cols-1 gap-10 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <span class="eyebrow" data-reveal>FAQ</span>
+      <h2 id="faq-title" class="t-h2 mt-4" data-reveal>Common questions</h2>
+      <p class="t-lead mt-4" data-reveal style="--d:100ms">Anything else, ask us directly. A real person replies within one working day.</p>
+      <a href="#contact" class="btn btn-dark mt-8" data-reveal style="--d:200ms">Ask a question</a>
+    </div>
+    <div class="stagger divide-y divide-line rounded-2xl border border-line bg-paper lg:col-span-8" data-reveal="fade">
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">Do we have to buy all six products at once?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">No. Most clients start with invoicing and accounting, or payroll and HR, and add modules later. Because they share one data model, adding a module never means re-entering data.</p></div></div>
+      </div>
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">Are we covered for FBR digital invoicing?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">Yes. Invoices are submitted to FBR in real time through a licensed integrator or PRAL, and each printed invoice carries the FBR invoice number and QR code. We handle registration and sandbox testing with you during setup.</p></div></div>
+      </div>
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">What do we need to do for UAE e-invoicing in 2027?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">Appoint a Ministry of Finance Accredited Service Provider (by 30 Oct 2026 if your revenue is AED 50M or more, otherwise by 31 Mar 2027). We generate PINT AE invoices and exchange them through the ASP you choose, so your team keeps invoicing exactly as it does today.</p></div></div>
+      </div>
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">Can you migrate data from our current tools?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">Yes. We import customers, suppliers, chart of accounts, opening balances, employees and open invoices from spreadsheets or exports of QuickBooks, Tally, Peachtree, Zoho and most payroll software, and reconcile the result with you before go-live.</p></div></div>
+      </div>
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">Where is our data hosted, and who owns it?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">Your data is yours. It is hosted in a region you choose, backed up daily, and exportable in standard formats at any time, including if you leave.</p></div></div>
+      </div>
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">How is pricing structured?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">A one-time implementation fee based on scope, then a monthly or annual subscription by plan and user band. Custom development is quoted separately with a fixed price wherever possible.</p></div></div>
+      </div>
+      <div class="acc">
+        <button class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display font-medium" aria-expanded="false">What does support look like after go-live?<i class="ph ph-plus acc-icon shrink-0 text-lg"></i></button>
+        <div class="acc-body"><div><p class="t-body px-6 pb-5">A named contact, a shared WhatsApp or Teams channel for your team, and response targets written into the agreement. Product and regulatory updates are included in the subscription.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA + CONTACT ================= -->
+<section id="contact" class="sec scroll-mt-28" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="grid grid-cols-1 overflow-hidden rounded-3xl bg-night text-paper lg:grid-cols-12" data-reveal="scale">
+      <div class="relative overflow-hidden p-8 sm:p-12 lg:col-span-5">
+        <div class="grid-bg pointer-events-none absolute inset-0 opacity-60" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-sun/25 blur-3xl" aria-hidden="true"></div>
+        <h2 id="contact-title" class="t-h2 relative">See it on your own numbers.</h2>
+        <p class="relative mt-4 text-[1.0625rem] leading-relaxed text-white/70">A 30-minute walkthrough using your real workflow. You leave with a scope and a price, not a slide deck.</p>
+        <ul class="relative mt-8 space-y-3 text-[0.9375rem] text-white/85">
+          <li class="flex gap-3"><i class="ph ph-check-circle mt-0.5 text-lg text-sun"></i>Live demo on your processes</li>
+          <li class="flex gap-3"><i class="ph ph-check-circle mt-0.5 text-lg text-sun"></i>Compliance check for FBR or UAE VAT</li>
+          <li class="flex gap-3"><i class="ph ph-check-circle mt-0.5 text-lg text-sun"></i>Fixed quote within 3 working days</li>
+        </ul>
+        <ul class="relative mt-10 space-y-4 border-t border-white/10 pt-8 text-[0.9375rem]">
+          <li class="flex items-center gap-3"><i class="ph ph-envelope-simple text-xl text-sun"></i><a href="mailto:hello@voyenza.com" class="hover:underline">hello@voyenza.com</a></li>
+          <li class="flex items-center gap-3"><i class="ph ph-phone text-xl text-sun"></i><a href="tel:+924235770140" class="hover:underline">+92 42 3577 0140</a></li>
+          <li class="flex items-center gap-3"><i class="ph ph-map-pin text-xl text-sun"></i><span>Lahore, Pakistan · Dubai, UAE</span></li>
+        </ul>
+      </div>
+      <form id="lead" class="bg-paper p-8 text-ink-900 sm:p-12 lg:col-span-7" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="grid gap-2">
+            <label for="name" class="text-sm font-medium">Full name</label>
+            <input id="name" name="name" class="field" type="text" autocomplete="name" placeholder="Ayesha Khan" required />
+            <p class="err items-center gap-1 text-sm"><i class="ph ph-warning-circle"></i>Please add your name.</p>
+          </div>
+          <div class="grid gap-2">
+            <label for="email" class="text-sm font-medium">Work email</label>
+            <input id="email" name="email" class="field" type="email" autocomplete="email" placeholder="you@company.com" required />
+            <p class="err items-center gap-1 text-sm"><i class="ph ph-warning-circle"></i>That email doesn't look right.</p>
+          </div>
+          <div class="grid gap-2">
+            <label for="company" class="text-sm font-medium">Company</label>
+            <input id="company" name="company" class="field" type="text" autocomplete="organization" placeholder="Company name" required />
+            <p class="err items-center gap-1 text-sm"><i class="ph ph-warning-circle"></i>Please add your company.</p>
+          </div>
+          <div class="grid gap-2">
+            <label for="size" class="text-sm font-medium">Team size</label>
+            <select id="size" name="size" class="field" required>
+              <option value="">Select</option><option>1 to 20</option><option>21 to 50</option><option>51 to 200</option><option>201 to 500</option><option>500+</option>
+            </select>
+            <p class="err items-center gap-1 text-sm"><i class="ph ph-warning-circle"></i>Please choose a team size.</p>
+          </div>
+          <div class="grid gap-2 sm:col-span-2">
+            <span class="text-sm font-medium">Where do you operate?</span>
+            <div class="flex flex-wrap gap-2">
+              <label class="pill cursor-pointer !py-2 has-[:checked]:border-ink has-[:checked]:bg-sun"><input type="checkbox" name="region" value="Pakistan" class="sr-only" />Pakistan</label>
+              <label class="pill cursor-pointer !py-2 has-[:checked]:border-ink has-[:checked]:bg-sun"><input type="checkbox" name="region" value="UAE" class="sr-only" />UAE</label>
+              <label class="pill cursor-pointer !py-2 has-[:checked]:border-ink has-[:checked]:bg-sun"><input type="checkbox" name="region" value="Other GCC" class="sr-only" />Other GCC</label>
+            </div>
+          </div>
+          <div class="grid gap-2 sm:col-span-2">
+            <label for="msg" class="text-sm font-medium">What would you like to fix first? <span class="font-normal text-ink-500">(optional)</span></label>
+            <textarea id="msg" name="message" class="field min-h-24 resize-y" placeholder="Tools you use today, what takes too long, timeline"></textarea>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <p class="text-sm text-ink-500">No commitment. We reply within one working day.</p>
+          <button type="submit" class="btn btn-dark"><span class="btn-text">Request a demo</span><i class="ph ph-arrow-right"></i></button>
+        </div>
+        <p id="form-ok" class="mt-5 hidden items-center gap-2 rounded-lg bg-sun-soft px-4 py-3 text-sm font-medium"><i class="ph-fill ph-check-circle text-lg"></i>Thanks. We'll email you a calendar link shortly.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER (dark) ================= -->
+<footer class="dark relative overflow-hidden" style="padding-bottom: env(safe-area-inset-bottom)">
+  <div class="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-4 lg:grid-cols-12">
+    <div class="col-span-2 lg:col-span-4" data-reveal="fade">
+      <img src="assets/logo-light.png" alt="Exoctic Software" width="1091" height="353" class="h-9 w-auto" loading="lazy" />
+      <p class="t-body mt-5 max-w-[34ch]">Connected business management software, built and supported from Lahore and Dubai since 2017.</p>
+      <div class="mt-6 flex gap-2">
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 transition hover:border-sun hover:text-sun" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-xl"></i></a>
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 transition hover:border-sun hover:text-sun" aria-label="X"><i class="ph ph-x-logo text-xl"></i></a>
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 transition hover:border-sun hover:text-sun" aria-label="Facebook"><i class="ph ph-facebook-logo text-xl"></i></a>
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 transition hover:border-sun hover:text-sun" aria-label="YouTube"><i class="ph ph-youtube-logo text-xl"></i></a>
+      </div>
+      <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs text-fog"><span class="h-2 w-2 rounded-full bg-[#28C840]"></span>All systems operational</div>
+    </div>
+    <nav class="lg:col-span-2" aria-label="Products" data-reveal="fade" style="--d:80ms">
+      <h3 class="font-display text-sm font-semibold">Products</h3>
+      <ul class="mt-4 space-y-2.5 text-sm text-fog">
+        <li><a class="hover:text-sun" href="#products">Invoicing</a></li><li><a class="hover:text-sun" href="#products">Accounting</a></li><li><a class="hover:text-sun" href="#products">Payroll &amp; HR</a></li><li><a class="hover:text-sun" href="#products">Travel management</a></li><li><a class="hover:text-sun" href="#products">Reporting</a></li><li><a class="hover:text-sun" href="#products">Custom systems</a></li>
+      </ul>
+    </nav>
+    <nav class="lg:col-span-2" aria-label="Company" data-reveal="fade" style="--d:140ms">
+      <h3 class="font-display text-sm font-semibold">Company</h3>
+      <ul class="mt-4 space-y-2.5 text-sm text-fog">
+        <li><a class="hover:text-sun" href="#customers">Customers</a></li><li><a class="hover:text-sun" href="#compliance">Compliance</a></li><li><a class="hover:text-sun" href="#security">Security</a></li><li><a class="hover:text-sun" href="#pricing">Pricing</a></li><li><a class="hover:text-sun" href="#process">How we work</a></li><li><a class="hover:text-sun" href="#contact">Careers</a></li>
+      </ul>
+    </nav>
+    <div class="col-span-2 md:col-span-2 lg:col-span-4" data-reveal="fade" style="--d:200ms">
+      <h3 class="font-display text-sm font-semibold">Offices</h3>
+      <div class="mt-4 grid gap-4 text-sm text-fog sm:grid-cols-2">
+        <div><span class="block font-medium text-paper">Lahore</span>Pakistan<br /><a href="tel:+924235770140" class="hover:text-sun">+92 42 3577 0140</a></div>
+        <div><span class="block font-medium text-paper">Dubai</span>United Arab Emirates<br /><a href="mailto:hello@voyenza.com" class="hover:text-sun">hello@voyenza.com</a></div>
+      </div>
+      <div class="mt-6 rounded-xl border border-white/10 p-4">
+        <div class="text-sm font-medium">Regulatory updates, once a month</div>
+        <form id="news" class="mt-3 flex gap-2" novalidate>
+          <label for="news-email" class="sr-only">Email address</label>
+          <input id="news-email" type="email" required placeholder="you@company.com" class="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-paper placeholder:text-white/40 outline-none focus:border-sun" />
+          <button class="btn btn-primary !px-4 !py-2 text-sm">Subscribe</button>
+        </form>
+        <p id="news-ok" class="mt-2 hidden text-xs text-sun">Subscribed. See you next month.</p>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="wrap flex flex-col gap-3 py-6 text-sm text-fog sm:flex-row sm:items-center sm:justify-between">
+      <span>&copy; <span id="year"></span> Exoctic Software. All rights reserved.</span>
+      <div class="flex gap-6"><a href="#" class="hover:text-sun">Privacy</a><a href="#" class="hover:text-sun">Terms</a><a href="#security" class="hover:text-sun">Security</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* Reveal + stagger */
+  $$('.stagger').forEach(s => [...s.children].forEach((c, i) => c.style.transitionDelay = `${i * 90}ms`));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+  $$('[data-reveal]').forEach(el => io.observe(el));
+
+  /* Count-up stats */
+  const fmt = new Intl.NumberFormat('en-US');
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      const el = e.target, end = Number(el.dataset.count);
+      if (reduce) { el.textContent = fmt.format(end); return; }
+      const t0 = performance.now(), dur = 1400;
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt.format(Math.round(end * ease));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.6 });
+  $$('[data-count]').forEach(el => cio.observe(el));
+
+  /* Nav background via sentinel */
+  const nav = $('#nav');
+  const sentinel = document.createElement('div');
+  sentinel.style.cssText = 'position:absolute;top:24px;height:1px;width:1px;pointer-events:none';
+  document.body.prepend(sentinel);
+  new IntersectionObserver(([e]) => nav.classList.toggle('scrolled', !e.isIntersecting)).observe(sentinel);
+
+  /* Products dropdown: click toggle for keyboard/touch, hover handled in CSS */
+  const ddBtn = $('#dd-btn'), ddPanel = $('#dd-panel');
+  const closeDd = () => { ddPanel.classList.remove('open'); ddBtn.setAttribute('aria-expanded', 'false'); };
+  ddBtn.addEventListener('click', () => ddBtn.setAttribute('aria-expanded', String(ddPanel.classList.toggle('open'))));
+  document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeDd(); });
+
+  /* Mobile menu */
+  const burger = $('#burger'), menu = $('#menu');
+  const focusables = () => $$('a, button', menu);
+  const setMenu = (open) => {
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    (open ? focusables()[0] : burger)?.focus({ preventScroll: true });
+  };
+  burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDd();
+    if (!menu.classList.contains('open')) return;
+    if (e.key === 'Escape') return setMenu(false);
+    if (e.key === 'Tab') {
+      const f = focusables(), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => e.matches && setMenu(false));
+
+  /* Product tour tabs (arrow keys move between tabs) */
+  const tabs = $$('[role="tab"]');
+  const selectTab = (tab) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      $('#' + t.getAttribute('aria-controls')).hidden = !on;
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', (e) => {
+      const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      selectTab(next); next.focus();
+    });
+  });
+
+  /* Accordion (one open at a time) */
+  const accs = $$('.acc');
+  accs.forEach(a => {
+    const btn = $('button', a);
+    btn.addEventListener('click', () => {
+      const open = !a.classList.contains('open');
+      accs.forEach(o => { o.classList.remove('open'); $('button', o).setAttribute('aria-expanded', 'false'); });
+      a.classList.toggle('open', open); btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  /* Industries scroller */
+  const track = $('#ind-track');
+  $$('[data-scroll]').forEach(b => b.addEventListener('click', () => {
+    track.scrollBy({ left: Number(b.dataset.scroll) * (track.firstElementChild.offsetWidth + 20), behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* Pricing: billing period and currency */
+  const price = { billing: 'annual', cur: 'PKR' };
+  const renderPrices = () => {
+    $$('.price').forEach(el => {
+      const base = Number(el.dataset[price.cur.toLowerCase()]);
+      const v = price.billing === 'annual' ? Math.round(base * 0.85) : base;
+      el.textContent = `${price.cur} ${fmt.format(v)}`;
+    });
+    $$('.bill-note').forEach(el => el.textContent = el.textContent.replace(/billed \w+/, `billed ${price.billing === 'annual' ? 'annually' : 'monthly'}`));
+    $$('[data-billing]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.billing === price.billing)));
+    $$('[data-cur]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.cur === price.cur)));
+  };
+  $$('[data-billing]').forEach(b => b.addEventListener('click', () => { price.billing = b.dataset.billing; renderPrices(); }));
+  $$('[data-cur]').forEach(b => b.addEventListener('click', () => { price.cur = b.dataset.cur; renderPrices(); }));
+  renderPrices();
+
+  /* UAE e-invoicing countdown (large-business go-live, 1 Jan 2027 GST) */
+  const days = Math.ceil((Date.UTC(2026, 11, 31, 20) - Date.now()) / 864e5);
+  $('#countdown').textContent = days > 0 ? fmt.format(days) : 'Live';
+
+  /* Form validation (wire submit to your backend) */
+  const form = $('#lead');
+  const validate = (el) => { const ok = el.checkValidity(); el.setAttribute('aria-invalid', String(!ok)); return ok; };
+  $$('.field[required]', form).forEach(el => el.addEventListener('input', () => el.getAttribute('aria-invalid') === 'true' && validate(el)));
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const bad = $$('.field[required]', form).filter(el => !validate(el));
+    if (bad.length) { bad[0].focus(); return; }
+    const btn = $('button[type="submit"]', form), txt = $('.btn-text', btn);
+    btn.disabled = true; txt.textContent = 'Sending';
+    // TODO: replace with fetch() to your endpoint
+    setTimeout(() => { $('#form-ok').classList.replace('hidden', 'flex'); form.reset(); btn.disabled = false; txt.textContent = 'Request a demo'; }, 900);
+  });
+
+  /* Newsletter (wire to your email tool) */
+  const news = $('#news');
+  news.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = $('input', news);
+    if (!input.checkValidity()) { input.focus(); return; }
+    news.reset(); $('#news-ok').classList.remove('hidden');
+  });
+
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
