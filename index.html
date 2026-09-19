@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Exoctic Software · Business software and custom trip apps</title>
+  <title>Exoctic Group · Business software and custom trip apps</title>
   <meta name="description" content="Billing, payroll, HR, travel management and reporting on one connected platform, plus custom trip management apps for iOS, Android and web." />
   <meta name="theme-color" content="#0A0A0B" />
-  <meta property="og:title" content="Exoctic Software · Run your whole back office from one place" />
+  <meta property="og:title" content="Exoctic Group · Run your whole back office from one place" />
   <meta property="og:description" content="Connected business software and custom trip management apps for growing companies." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/favicon-512.png" />
@@ -274,8 +274,8 @@
     </div>
   </div>
   <div class="wrap flex h-[68px] items-center justify-between gap-6">
-    <a href="#top" class="flex shrink-0 items-center" aria-label="Exoctic Software, back to top">
-      <img src="assets/logo-light.png" alt="Exoctic Software" width="1091" height="353" class="h-8 w-auto sm:h-9" fetchpriority="high" />
+    <a href="#top" class="flex shrink-0 items-center" aria-label="Exoctic Group, back to top">
+      <img src="assets/logo-light.png" alt="Exoctic Group" width="1091" height="353" class="h-8 w-auto sm:h-9" fetchpriority="high" />
     </a>
 
     <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
@@ -306,7 +306,8 @@
     </nav>
 
     <div class="flex items-center gap-2">
-      <a href="#contact" class="nav-link hidden lg:inline-flex">Sign in</a>
+      <!-- TODO: set the WhatsApp link, e.g. https://wa.me/<number-with-country-code> -->
+      <a href="#" data-whatsapp class="nav-link hidden items-center gap-1.5 lg:inline-flex" aria-label="Chat on WhatsApp"><i class="ph ph-whatsapp-logo text-xl text-[#25D366]"></i>WhatsApp</a>
       <a href="#contact" class="btn btn-primary hidden !px-5 !py-2.5 sm:inline-flex">Book a demo</a>
       <button id="burger" class="burger grid h-11 w-11 place-items-center rounded-full border border-white/15 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
         <span class="grid gap-[5px]"><span class="b1 block h-[2px] w-5 bg-paper"></span><span class="b2 block h-[2px] w-5 bg-paper"></span><span class="b3 block h-[2px] w-5 bg-paper"></span></span>
@@ -326,7 +327,8 @@
   </nav>
   <div class="m-item mt-auto grid gap-3" style="--i:6">
     <a href="#contact" class="btn btn-primary w-full">Book a demo</a>
-    <a href="mailto:hello@voyenza.com" class="text-center text-sm text-fog">hello@voyenza.com</a>
+    <a href="#" data-whatsapp class="btn btn-ghost w-full"><i class="ph ph-whatsapp-logo text-lg text-[#25D366]"></i>WhatsApp</a>
+    <a href="mailto:info@exocticgroup.com" class="text-center text-sm text-fog">info@exocticgroup.com</a>
   </div>
 </div>
 
@@ -391,7 +393,7 @@
         </div>
       </div>
 
-      <div class="floaty absolute -bottom-8 -left-3 hidden items-center gap-3 rounded-2xl border border-line bg-paper px-4 py-3 text-ink shadow-xl sm:flex lg:-left-10" aria-hidden="true">
+      <div class="floaty absolute -bottom-16 -left-3 hidden items-center gap-3 rounded-2xl border border-line bg-paper px-4 py-3 text-ink shadow-xl sm:flex lg:-left-10" aria-hidden="true">
         <span class="grid h-9 w-9 place-items-center rounded-full bg-sun"><i class="ph ph-check text-lg"></i></span>
         <span class="text-sm"><span class="block font-medium">Invoice paid</span><span class="block text-xs text-ink-500">Meridian Logistics · $11,205</span></span>
       </div>
@@ -427,15 +429,6 @@
     </div>
   </div>
 
-  <!-- Stats band (sample figures: replace with real numbers) -->
-  <div class="relative border-y border-white/10 bg-night-800/80">
-    <dl class="wrap stagger grid grid-cols-2 gap-y-10 py-12 lg:grid-cols-4" data-reveal="fade">
-      <div class="px-2 lg:border-r lg:border-white/10"><dt class="text-sm text-fog">Founded</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl">2017</dd></div>
-      <div class="px-2 lg:border-r lg:border-white/10 lg:pl-8"><dt class="text-sm text-fog">Systems delivered</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl"><span data-count="140">0</span><span class="text-sun">+</span></dd></div>
-      <div class="px-2 lg:border-r lg:border-white/10 lg:pl-8"><dt class="text-sm text-fog">Invoices issued last year</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl"><span data-count="1300000">0</span><span class="text-sun">+</span></dd></div>
-      <div class="px-2 lg:pl-8"><dt class="text-sm text-fog">Client retention</dt><dd class="mt-1 font-display text-3xl font-semibold sm:text-4xl"><span data-count="97">0</span><span class="text-sun">%</span></dd></div>
-    </dl>
-  </div>
 </section>
 
 <!-- ================= PRODUCTS (bento) ================= -->
@@ -1031,7 +1024,7 @@
       <div class="lg:sticky lg:top-32">
         <h2 id="faq-title" class="t-h2" data-split>Questions, answered.</h2>
         <p class="t-lead mt-5" data-reveal style="--d:100ms">Anything else? A real person replies within one working day.</p>
-        <a href="mailto:hello@voyenza.com" class="btn btn-ghost mt-8" data-reveal style="--d:200ms"><i class="ph ph-envelope-simple text-lg text-sun"></i>hello@voyenza.com</a>
+        <a href="mailto:info@exocticgroup.com" class="btn btn-ghost mt-8" data-reveal style="--d:200ms"><i class="ph ph-envelope-simple text-lg text-sun"></i>info@exocticgroup.com</a>
       </div>
     </div>
     <div class="stagger grid gap-3 lg:col-span-8" data-reveal="fade">
@@ -1131,7 +1124,7 @@
 <footer class="relative overflow-hidden border-t border-white/[0.06]" style="padding-bottom: env(safe-area-inset-bottom)">
   <div class="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-4 lg:grid-cols-12">
     <div class="col-span-2 lg:col-span-4">
-      <img src="assets/logo-light.png" alt="Exoctic Software" width="1091" height="353" class="h-9 w-auto" loading="lazy" />
+      <img src="assets/logo-light.png" alt="Exoctic Group" width="1091" height="353" class="h-9 w-auto" loading="lazy" />
       <p class="t-body mt-5 max-w-[34ch]">Connected business software and custom trip apps for growing companies. Since 2017.</p>
       <div class="mt-6 flex gap-2">
         <a href="#" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 transition hover:border-sun hover:text-sun" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-xl"></i></a>
@@ -1160,7 +1153,7 @@
         <button class="btn btn-primary !px-5 !py-2 text-sm">Subscribe</button>
       </form>
       <p id="news-ok" class="mt-2 hidden text-xs text-sun">Subscribed. See you next month.</p>
-      <a href="mailto:hello@voyenza.com" class="mt-6 inline-flex items-center gap-2 text-sm text-fog hover:text-sun"><i class="ph ph-envelope-simple text-lg"></i>hello@voyenza.com</a>
+      <a href="mailto:info@exocticgroup.com" class="mt-6 inline-flex items-center gap-2 text-sm text-fog hover:text-sun"><i class="ph ph-envelope-simple text-lg"></i>info@exocticgroup.com</a>
     </div>
   </div>
 
@@ -1173,7 +1166,7 @@
 
   <div class="border-t border-white/10">
     <div class="wrap flex flex-col gap-3 py-6 text-sm text-fog sm:flex-row sm:items-center sm:justify-between">
-      <span>&copy; <span id="year"></span> Exoctic Software. All rights reserved.</span>
+      <span>&copy; <span id="year"></span> Exoctic Group. All rights reserved.</span>
       <div class="flex gap-6"><a href="privacy.html" class="hover:text-sun">Privacy</a><a href="terms.html" class="hover:text-sun">Terms</a><a href="#security" class="hover:text-sun">Security</a></div>
     </div>
   </div>
@@ -1210,7 +1203,8 @@
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
     const id = a.getAttribute('href');
-    const target = id === '#top' || id === '#' ? document.body : $(id);
+    if (id === '#') { e.preventDefault(); return; }
+    const target = id === '#top' ? document.body : $(id);
     if (!target) return;
     e.preventDefault();
     if (lenis) lenis.scrollTo(target, { offset: id === '#top' ? 0 : NAV_OFFSET });

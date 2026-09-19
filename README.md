@@ -1,6 +1,6 @@
-# Exoctic Software
+# Exoctic Group
 
-Marketing website for Exoctic Software: connected business software (billing, payroll & HR, travel management, reporting, custom systems) and custom trip management apps for iOS, Android and web.
+Marketing website for Exoctic Group: connected business software (billing, payroll & HR, travel management, reporting, custom systems) and custom trip management apps for iOS, Android and web.
 
 ## Structure
 
