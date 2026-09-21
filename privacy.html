@@ -20,7 +20,7 @@
 <header class="top">
   <div class="wrap bar">
     <a href="index.html" aria-label="Exoctic Group home"><img src="assets/logo-light.png" alt="Exoctic Group" width="1091" height="353" class="logo" /></a>
-    <a href="index.html" class="back"><i class="ph ph-arrow-left"></i>Back to site</a>
+    <a href="index.html" class="back"><i class="ph ph-arrow-left"></i><span>Back to site</span></a>
   </div>
 </header>
 
@@ -34,8 +34,9 @@
 
   <div class="layout">
     <nav class="toc" aria-label="On this page">
-      <p class="toc-title">On this page</p>
-      <ol>
+      <button type="button" class="toc-btn" aria-expanded="false" aria-controls="toc-list"><span>On this page<span class="toc-current"></span></span><i class="ph ph-caret-down"></i></button>
+      <div class="toc-body"><div>
+      <ol id="toc-list">
         <li><a href="#who">Who we are</a></li>
         <li><a href="#scope">Scope and roles</a></li>
         <li><a href="#collect">Data we collect</a></li>
@@ -52,6 +53,7 @@
         <li><a href="#changes">Changes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ol>
+      </div></div>
     </nav>
 
     <article class="prose">
@@ -174,6 +176,6 @@
     <span class="foot-links"><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a><a href="index.html">Home</a></span>
   </div>
 </footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/legal.js"></script>
 </body>
 </html>
