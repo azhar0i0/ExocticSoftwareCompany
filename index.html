@@ -160,9 +160,9 @@
       .sel-opt[aria-selected="true"] i { opacity: 1; }
 
       /* Mobile menu: expandable group */
-      .m-group-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease-out); }
-      .m-group-body > div { overflow: hidden; }
-      .m-group.open .m-group-body { grid-template-rows: 1fr; }
+      .m-group-body { display: grid; grid-template-rows: 0fr; opacity: 0; visibility: hidden; transition: grid-template-rows .5s var(--ease-out), opacity .3s var(--ease-out), visibility 0s linear .5s; }
+      .m-group-body > div { min-height: 0; overflow: hidden; }
+      .m-group.open .m-group-body { grid-template-rows: 1fr; opacity: 1; visibility: visible; transition: grid-template-rows .5s var(--ease-out), opacity .4s var(--ease-out) .1s, visibility 0s; }
       .m-group .m-caret { transition: transform .4s var(--ease-out); }
       .m-group.open .m-caret { transform: rotate(180deg); }
 
@@ -354,6 +354,7 @@
     <div class="m-item m-group" style="--i:0">
       <button type="button" class="flex w-full items-center justify-between gap-4 py-4 text-left font-display text-2xl font-medium" aria-expanded="false" aria-controls="m-products">Products <i class="ph ph-caret-down m-caret text-xl text-fog"></i></button>
       <div id="m-products" class="m-group-body">
+        <div>
         <div class="grid grid-cols-2 gap-2 pb-5">
           <a href="#products" class="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.03] px-3.5 py-3 text-sm font-medium"><i class="ph ph-receipt text-lg text-sun"></i>Billing</a>
           <a href="#products" class="flex items-center gap-2.5 rounded-2xl border border-sun/40 bg-sun/10 px-3.5 py-3 text-sm font-medium"><i class="ph ph-device-mobile text-lg text-sun"></i>Trip apps</a>
@@ -362,6 +363,7 @@
           <a href="#products" class="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.03] px-3.5 py-3 text-sm font-medium"><i class="ph ph-chart-line-up text-lg text-sun"></i>Reporting</a>
           <a href="#products" class="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.03] px-3.5 py-3 text-sm font-medium"><i class="ph ph-code text-lg text-sun"></i>Custom systems</a>
           <a href="#tour" class="col-span-2 flex items-center justify-between rounded-2xl bg-night-700 px-4 py-3 text-sm font-medium">Take the product tour <i class="ph ph-arrow-right text-sun"></i></a>
+        </div>
         </div>
       </div>
     </div>
@@ -1363,6 +1365,7 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menu.classList.toggle('open', open);
+    if (!open) $$('.m-group', menu).forEach(g => { g.classList.remove('open'); $('button', g).setAttribute('aria-expanded', 'false'); });
     document.body.style.overflow = open ? 'hidden' : '';
     if (lenis) open ? lenis.stop() : lenis.start();
     (open ? focusables()[0] : burger)?.focus({ preventScroll: true });
